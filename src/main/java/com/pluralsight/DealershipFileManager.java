@@ -35,8 +35,20 @@ public class DealershipFileManager {
         return dealership;
     }
 
-    // Save method placeholder for now
+    // Writes dealership and inventory data to the file
     public void saveDealership(Dealership dealership) {
-        // To be implemented in Phase 5
+        try (PrintWriter writer = new PrintWriter(new FileWriter("inventory.csv"))) {
+            // Write Dealership details (first line)
+            writer.printf("%s|%s|%s%n", dealership.getName(), dealership.getAddress(), dealership.getPhone());
+
+            // Write each vehicle in the inventory
+            for (Vehicle vehicle : dealership.getAllVehicles()) {
+                writer.printf("%d|%d|%s|%s|%s|%s|%d|%.2f%n",
+                        vehicle.getVin(), vehicle.getYear(), vehicle.getMake(), vehicle.getModel(),
+                        vehicle.getVehicleType(), vehicle.getColor(), vehicle.getOdometer(), vehicle.getPrice());
+            }
+        } catch (IOException e) {
+            System.out.println("Error saving file: " + e.getMessage());
+        }
     }
 }
