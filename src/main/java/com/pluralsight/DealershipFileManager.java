@@ -3,6 +3,7 @@ package com.pluralsight;
 import java.io.*;
 import java.util.ArrayList;
 
+
 public class DealershipFileManager {
 
     // Reads the dealership information from the file and returns a Dealership object
