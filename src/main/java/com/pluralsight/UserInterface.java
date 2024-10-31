@@ -125,7 +125,7 @@ public class UserInterface {
     // Finds vehicles by type
     private void processGetByVehicleTypeRequest() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter vehicle type (e.g., car, truck, SUV): ");
+        System.out.print("Enter vehicle type (e.g., sedan, truck, SUV): ");
         String type = scanner.nextLine();
 
         List<Vehicle> vehicles = dealership.getVehiclesByType(type);
