@@ -12,9 +12,6 @@ public class UserInterface {
         fileManager = new DealershipFileManager();  // Initializes fileManager
         init();
     }
-
-
-    // Initializes the dealership by loading from the file
     private void init() {
         DealershipFileManager fileManager = new DealershipFileManager();
         this.dealership = fileManager.getDealership();
